@@ -51,12 +51,6 @@ funcion_Area_Lemniscata_TD <- function(numeroPuntos){
   #Parte Inferior Derecha 
   points(x_puntosDiscretos_der,y_puntosDiscretos_inf_der, col = "red", pch=19)
   
-  
-  #Triangulación Parte Superior Izquierda
-  i=1
-  for(i in 1:length(x_puntosDiscretos_izq)){
-    
-  }
     #Triangulo 1
     lines(c(x_puntosDiscretos_izq[1],x_puntosDiscretos_izq[2]),c(y_puntosDiscretos_sup_izq[1],y_puntosDiscretos_sup_izq[2]), col = "green", pch=9);
     lines(c(x_puntosDiscretos_izq[2],x_puntosDiscretos_izq[3]),c(y_puntosDiscretos_sup_izq[2],y_puntosDiscretos_sup_izq[3]), col = "green", pch=9);
@@ -67,7 +61,8 @@ funcion_Area_Lemniscata_TD <- function(numeroPuntos){
     b_perpendicular_1=-m_perpendicular_1*x_puntosDiscretos_izq[2]+y_puntosDiscretos_sup_izq[2]
     x_interseccion_1=(b_perpendicular_1-b_base_1)/(m_base_1-m_perpendicular_1)
     y_intersección_1=m_perpendicular_1*x_interseccion_1+b_perpendicular_1;
-    points(x_interseccion_1,y_intersección_1, col = "yellow", pch=19)
+    points(x_interseccion_1,y_intersección_1, col= "black")
+    lines(c(x_interseccion_1,x_puntosDiscretos_izq[2]),c(y_intersección_1,y_puntosDiscretos_sup_izq[2]), col = "yellow", pch=9);
     base_Tr1=sqrt((x_puntosDiscretos_izq[1]-x_puntosDiscretos_izq[3])^2+(y_puntosDiscretos_sup_izq[1]-y_puntosDiscretos_sup_izq[3])^2);
     altura_Tr1=sqrt((x_interseccion_1-x_puntosDiscretos_izq[2])^2+(y_intersección_1-y_puntosDiscretos_sup_izq[2])^2)
     area_Tr1=base_Tr1*altura_Tr1/2
@@ -80,7 +75,8 @@ funcion_Area_Lemniscata_TD <- function(numeroPuntos){
     b_perpendicular_2=-m_perpendicular_2*x_puntosDiscretos_izq[3]+y_puntosDiscretos_sup_izq[3]
     x_interseccion_2=(b_perpendicular_2-b_base_2)/(m_base_2-m_perpendicular_2)
     y_intersección_2=m_perpendicular_2*x_interseccion_2+b_perpendicular_2;
-    points(x_interseccion_2,y_intersección_2, col = "yellow", pch=19)
+    points(x_interseccion_2,y_intersección_2, col= "black")
+    lines(c(x_interseccion_2,x_puntosDiscretos_izq[3]),c(y_intersección_2,y_puntosDiscretos_sup_izq[3]), col = "yellow", pch=9);
     base_Tr2=sqrt((x_puntosDiscretos_izq[1]-x_puntosDiscretos_izq[4])^2+(y_puntosDiscretos_sup_izq[1]-y_puntosDiscretos_sup_izq[4])^2);
     altura_Tr2=sqrt((x_interseccion_2-x_puntosDiscretos_izq[3])^2+(y_intersección_2-y_puntosDiscretos_sup_izq[3])^2)
     area_Tr2=base_Tr2*altura_Tr2/2
@@ -93,7 +89,8 @@ funcion_Area_Lemniscata_TD <- function(numeroPuntos){
     b_perpendicular_3=-m_perpendicular_3*x_puntosDiscretos_izq[4]+y_puntosDiscretos_sup_izq[4]
     x_interseccion_3=(b_perpendicular_3-b_base_3)/(m_base_3-m_perpendicular_3)
     y_intersección_3=m_perpendicular_3*x_interseccion_3+b_perpendicular_3;
-    points(x_interseccion_3,y_intersección_3, col = "yellow", pch=19)
+    points(x_interseccion_3,y_intersección_3, col= "black")
+    lines(c(x_interseccion_3,x_puntosDiscretos_izq[4]),c(y_intersección_3,y_puntosDiscretos_sup_izq[4]), col = "yellow", pch=9);
     base_Tr3=sqrt((x_puntosDiscretos_izq[1]-x_puntosDiscretos_izq[5])^2+(y_puntosDiscretos_sup_izq[1]-y_puntosDiscretos_sup_izq[5])^2);
     altura_Tr3=sqrt((x_interseccion_3-x_puntosDiscretos_izq[4])^2+(y_intersección_3-y_puntosDiscretos_sup_izq[4])^2)
     area_Tr3=base_Tr3*altura_Tr3/2
@@ -104,85 +101,20 @@ funcion_Area_Lemniscata_TD <- function(numeroPuntos){
     b_base_4=y_puntosDiscretos_sup_izq[6]-m_base_2*x_puntosDiscretos_izq[6];
     x_interseccion_4=x_puntosDiscretos_izq[5]
     y_intersección_4=m_base_4*x_interseccion_4+b_base_4;
-    points(x_interseccion_4,y_intersección_4, col = "yellow", pch=19)
+    points(x_interseccion_4,y_intersección_4, col= "black")
+    lines(c(x_interseccion_4,x_puntosDiscretos_izq[5]),c(y_intersección_4,y_puntosDiscretos_sup_izq[5]), col = "yellow", pch=9);
     base_Tr4=sqrt((x_puntosDiscretos_izq[1]-x_puntosDiscretos_izq[6])^2+(y_puntosDiscretos_sup_izq[1]-y_puntosDiscretos_sup_izq[6])^2);
     altura_Tr4=sqrt((x_interseccion_4-x_puntosDiscretos_izq[5])^2+(y_intersección_4-y_puntosDiscretos_sup_izq[5])^2)
     area_Tr4=base_Tr4*altura_Tr4/2
     
-    area_Triangulacion=area_Tr1+area_Tr2+area_Tr3+area_Tr4;
-    error=100*abs(area_Triangulacion-areaTeoria/4)/(areaTeoria/4);
-    cat("Parte Superior Izquierda = ","%\n");
-    cat("--->Área Tr1 = ", area_Tr1,"\n");
-    cat("--->Área Tr2 = ", area_Tr2,"\n");
-    cat("--->Área Tr3 = ", area_Tr3,"\n");
-    cat("--->Área Tr4 = ", area_Tr4,"\n");
-    cat("--->Área triangulacion = ", area_Triangulacion,"\n");
-    cat("--->Área teoría = ", areaTeoria/4,"\n");
-    cat("--->Error cometido = ", error,"%\n");
-    
-    #Triangulación Parte Superior derecha
-    #Triangulo 1
-    lines(c(x_puntosDiscretos_der[1],x_puntosDiscretos_der[2]),c(y_puntosDiscretos_sup_der[1],y_puntosDiscretos_sup_der[2]), col = "green", pch=9);
-    lines(c(x_puntosDiscretos_der[2],x_puntosDiscretos_der[3]),c(y_puntosDiscretos_sup_der[2],y_puntosDiscretos_sup_der[3]), col = "green", pch=9);
-    lines(c(x_puntosDiscretos_der[1],x_puntosDiscretos_der[3]),c(y_puntosDiscretos_sup_der[1],y_puntosDiscretos_sup_der[3]), col = "green", pch=9);
-    m_base_1=(y_puntosDiscretos_sup_der[3]-y_puntosDiscretos_sup_der[1])/(x_puntosDiscretos_der[3]-x_puntosDiscretos_der[1]);
-    b_base_1=y_puntosDiscretos_sup_der[3]-m_base_1*x_puntosDiscretos_der[3];
-    m_perpendicular_1=-1/m_base_1;
-    b_perpendicular_1=-m_perpendicular_1*x_puntosDiscretos_der[2]+y_puntosDiscretos_sup_der[2]
-    x_interseccion_1=(b_perpendicular_1-b_base_1)/(m_base_1-m_perpendicular_1)
-    y_intersección_1=m_perpendicular_1*x_interseccion_1+b_perpendicular_1;
-    points(x_interseccion_1,y_intersección_1, col = "yellow", pch=19)
-    base_Tr1=sqrt((x_puntosDiscretos_der[1]-x_puntosDiscretos_der[3])^2+(y_puntosDiscretos_sup_der[1]-y_puntosDiscretos_sup_der[3])^2);
-    altura_Tr1=sqrt((x_interseccion_1-x_puntosDiscretos_der[2])^2+(y_intersección_1-y_puntosDiscretos_sup_der[2])^2)
-    area_Tr1=base_Tr1*altura_Tr1/2
-    #Triangulo 2
-    lines(c(x_puntosDiscretos_der[3],x_puntosDiscretos_der[4]),c(y_puntosDiscretos_sup_der[3],y_puntosDiscretos_sup_der[4]), col = "green", pch=9);
-    lines(c(x_puntosDiscretos_der[1],x_puntosDiscretos_der[4]),c(y_puntosDiscretos_sup_der[1],y_puntosDiscretos_sup_der[4]), col = "green", pch=9);
-    m_base_2=(y_puntosDiscretos_sup_der[4]-y_puntosDiscretos_sup_der[1])/(x_puntosDiscretos_der[4]-x_puntosDiscretos_der[1]);
-    b_base_2=y_puntosDiscretos_sup_der[4]-m_base_2*x_puntosDiscretos_der[4];
-    m_perpendicular_2=-1/m_base_2;
-    b_perpendicular_2=-m_perpendicular_2*x_puntosDiscretos_der[3]+y_puntosDiscretos_sup_der[3]
-    x_interseccion_2=(b_perpendicular_2-b_base_2)/(m_base_2-m_perpendicular_2)
-    y_intersección_2=m_perpendicular_2*x_interseccion_2+b_perpendicular_2;
-    points(x_interseccion_2,y_intersección_2, col = "yellow", pch=19)
-    base_Tr2=sqrt((x_puntosDiscretos_der[1]-x_puntosDiscretos_izq[4])^2+(y_puntosDiscretos_sup_der[1]-y_puntosDiscretos_sup_izq[4])^2);
-    altura_Tr2=sqrt((x_interseccion_2-x_puntosDiscretos_der[3])^2+(y_intersección_2-y_puntosDiscretos_sup_der[3])^2)
-    area_Tr2=base_Tr2*altura_Tr2/2
-    #Triangulo 3
-    lines(c(x_puntosDiscretos_der[4],x_puntosDiscretos_der[5]),c(y_puntosDiscretos_sup_der[4],y_puntosDiscretos_sup_der[5]), col = "green", pch=9);
-    lines(c(x_puntosDiscretos_der[1],x_puntosDiscretos_der[5]),c(y_puntosDiscretos_sup_der[1],y_puntosDiscretos_sup_der[5]), col = "green", pch=9);
-    m_base_3=(y_puntosDiscretos_sup_der[5]-y_puntosDiscretos_sup_der[1])/(x_puntosDiscretos_der[5]-x_puntosDiscretos_der[1]);
-    b_base_3=y_puntosDiscretos_sup_der[5]-m_base_3*x_puntosDiscretos_der[5];
-    m_perpendicular_3=-1/m_base_3;
-    b_perpendicular_3=-m_perpendicular_3*x_puntosDiscretos_der[4]+y_puntosDiscretos_sup_der[4]
-    x_interseccion_3=(b_perpendicular_3-b_base_3)/(m_base_3-m_perpendicular_3)
-    y_intersección_3=m_perpendicular_3*x_interseccion_3+b_perpendicular_3;
-    points(x_interseccion_3,y_intersección_3, col = "yellow", pch=19)
-    base_Tr3=sqrt((x_puntosDiscretos_der[1]-x_puntosDiscretos_der[5])^2+(y_puntosDiscretos_sup_der[1]-y_puntosDiscretos_sup_der[5])^2);
-    altura_Tr3=sqrt((x_interseccion_3-x_puntosDiscretos_der[4])^2+(y_intersección_3-y_puntosDiscretos_sup_der[4])^2)
-    area_Tr3=base_Tr3*altura_Tr3/2
-    #Triangulo 4
-    lines(c(x_puntosDiscretos_der[5],x_puntosDiscretos_der[6]),c(y_puntosDiscretos_sup_der[5],y_puntosDiscretos_sup_der[6]), col = "green", pch=9);
-    lines(c(x_puntosDiscretos_der[1],x_puntosDiscretos_der[6]),c(y_puntosDiscretos_sup_der[1],y_puntosDiscretos_sup_der[6]), col = "green", pch=9);
-    m_base_4=(y_puntosDiscretos_sup_der[6]-y_puntosDiscretos_sup_der[1])/(x_puntosDiscretos_der[6]-x_puntosDiscretos_der[1]);
-    b_base_4=y_puntosDiscretos_sup_der[6]-m_base_2*x_puntosDiscretos_der[6];
-    x_interseccion_4=x_puntosDiscretos_der[5]
-    y_intersección_4=0;
-    points(x_interseccion_4,y_intersección_4, col = "yellow", pch=19)
-    base_Tr4=sqrt((x_puntosDiscretos_der[1]-x_puntosDiscretos_der[6])^2+(y_puntosDiscretos_sup_der[1]-y_puntosDiscretos_sup_der[6])^2);
-    altura_Tr4=sqrt((x_interseccion_4-x_puntosDiscretos_der[5])^2+(y_intersección_4-y_puntosDiscretos_sup_der[5])^2)
-    area_Tr4=base_Tr4*altura_Tr4/2
-    
-    area_Triangulacion=area_Tr1+area_Tr2+area_Tr3+area_Tr4;
-    error=100*abs(area_Triangulacion-areaTeoria/4)/(areaTeoria/4);
-    cat("Parte Superior Derecha = ","\n");
-    cat("--->Área Tr1 = ", area_Tr1,"\n");
-    cat("--->Área Tr2 = ", area_Tr2,"\n");
-    cat("--->Área Tr3 = ", area_Tr3,"\n");
-    cat("--->Área Tr4 = ", area_Tr4,"\n");
-    cat("--->Área triangulacion = ", area_Triangulacion,"\n");
-    cat("--->Área teoría = ", areaTeoria/4,"\n");
-    cat("--->Error cometido = ", error,"%\n");
+    area_Triangulacion=4*(area_Tr1+area_Tr2+area_Tr3+area_Tr4);
+    error=100*abs(area_Triangulacion-areaTeoria)/(areaTeoria);
+    cat("#######################################################\n");
+    cat("#-->RESULTADOS<--\n");
+    cat("#--->Área Real Lemniscata = ", areaTeoria,"\n");
+    cat("#--->Área Aproximada por Triangulación Lemniscata = ", area_Triangulacion,"\n");
+    cat("#--->Error cometido = ", error,"%\n");
+    cat("#######################################################\n");
 }
 
 #Probamos la función
